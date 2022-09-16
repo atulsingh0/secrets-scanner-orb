@@ -1,0 +1,13 @@
+description: >
+  Scan the repository using trufflehog
+
+parameters:
+  directory:
+    type: string
+    default: "."
+    description: "Directory to scan"
+steps:
+  - checkout
+  - run: wget https://github.com/trufflesecurity/trufflehog/releases/download/v3.10.3/trufflehog_3.10.3_linux_amd64.tar.gz
+  - run: sudo tar -xzvf trufflehog_3.10.3_linux_amd64.tar.gz -C /usr/bin/ trufflehog && rm trufflehog_3.10.3_linux_amd64.tar.gz
+  - run: trufflehog --no-update filesystem --directory << parameters.directory >>

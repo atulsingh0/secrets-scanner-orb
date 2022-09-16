@@ -1,0 +1,13 @@
+description: >
+  Scan the repository for potential secrets
+
+executor: default
+
+parameters:
+  directory:
+    type: string
+    default: "."
+    description: "Directory to scan"
+steps:
+  - scan-with-trufflehog
+  - scan-with-git-secrets
