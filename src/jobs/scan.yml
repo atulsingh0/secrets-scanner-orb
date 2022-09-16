@@ -9,5 +9,5 @@ parameters:
     default: "."
     description: "Directory to scan"
 steps:
-  - scan-with-trufflehog
-  - scan-with-git-secrets
+  - trufflehog-scan
+  - git-secrets-scan
