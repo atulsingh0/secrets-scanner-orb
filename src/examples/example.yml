@@ -6,8 +6,10 @@ description: >
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    scanner: atul/secrets-scanner-orb@dev:alpha
+
   workflows:
     use-my-orb:
       jobs:
-        - <orb-name>/<job-name>
+        - scanner/scan-git-secrets
+        - scanner/scan-trufflehog
