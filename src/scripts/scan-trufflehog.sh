@@ -1,2 +1,2 @@
 #!/bin/sh
-trufflehog --no-update --fail filesystem --directory "${DIRECTORY}"
+trufflehog --no-update --fail git "file://${DIRECTORY}"
