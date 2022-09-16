@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - secrets-scanner-orb/greet
+      - secrets-scanner-orb/scan
 workflows:
   test-deploy:
     jobs:
