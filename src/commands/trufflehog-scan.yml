@@ -13,4 +13,6 @@ steps:
       command: <<include(scripts/install-trufflehog.sh)>>
   - run:
       name: scanning
-      command: trufflehog --no-update filesystem --directory << parameters.directory >>
+      environment:
+        DIRECTORY: <<parameters.directory>>
+      command: <<include(scripts/scan-trufflehog.sh)>>
